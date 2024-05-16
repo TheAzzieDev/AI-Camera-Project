@@ -5,9 +5,6 @@ import os
 import uuid
 import requests
 
-#app = Flask(__name__)
-#CORS(app)
-
 model = YOLO("models/yolov8n.pt")
 temp_id = None
 counter = 0

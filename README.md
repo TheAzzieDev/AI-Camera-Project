@@ -7,5 +7,5 @@ project status is currently inactive.
 1. Before running the application install the necessary dependancies: <br>
 ```pip install requirments.txt``` <br>
 2. To run the application use the command: <br>
-```flask --app panel run --debug ``` <br>
-The frame rate can be slow when accessing the camera page so please be patient
+```flask --app panel run --debug ``` 
+<br>The frame rate can be slow when accessing the camera page so please be patient

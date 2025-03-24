@@ -110,12 +110,10 @@ def capture_and_send():
                     time_in_seconds_before = time_in_seconds
 
         
-        cv2.namedWindow('Video', cv2.WINDOW_KEEPRATIO)
+        ret, buffer = cv2.imencode(".jpg", plotted_image)
+        plotted_image = buffer.tobytes()
+        yield(b'--frame\n' + b'Content-Type: image/jpeg\n\n' + plotted_image + b'\n')
 
-        # width: 1080 height: 1920
-        cv2.resizeWindow('Video', int(1920/2), int(1080/2),)
-
-        cv2.imshow('Video', plotted_image)
 
         if cv2.waitKey(25) & 0xFF == ord('q'):
             break

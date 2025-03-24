@@ -2,14 +2,26 @@
 <html>
     <head>
         <link rel="stylesheet" href="{{url_for('static', filename='panel.css')}}">
+        <link rel="stylesheet" href="{{url_for('static', filename='navigation.css')}}">
     </head>
     <body>
-        <h1>Captures From Camera</h1>
+        <div class = "navbar">
+            <div class = "menu-container">
+                <a href="{{url_for('index')}}" style="text-decoration: none;"><div>Go Back</div></a>
+                <a href="{{url_for('track')}}" style="text-decoration: none;"><div>Camera</div></a>
+            </div>
+        </div>
+
+      
         <div class = "content">
             <div class = "container">
+                {% if length == 0 %}
+                    <div style ="text-align: center;">
+                        <h1 style = "font-family: monospace;">No intruders detected</h1>
+                    </div>
+                {% endif %}
                 {% for date in directories %}
                     <h3>{{ date }}</h3>
-
                     <div class = "grid-container">
 
                     {% for file_path, file_name in file_info %} 

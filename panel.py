@@ -36,8 +36,15 @@ def panel():
         dirname = os.path.basename(os.path.dirname(image_path))    
         dir_set.add(dirname)
    
-    return render_template("panel.html", directories=dir_set, file_info=file_info)
-    
+    return render_template("panel.html", directories=dir_set, file_info=file_info, length=len(dir_set))
+
+@app.route("/track", methods = ["GET"])
+def track():
+    return render_template("tracking.html")
+
+@app.route("/generate_frames")
+def generate_frames():
+    return Response(tracking.capture_and_send(),  mimetype="multipart/x-mixed-replace; boundary=frame")
 
 if __name__ == "__main__":
     app.run(debug=True, host = "0.0.0.0", port=8080)

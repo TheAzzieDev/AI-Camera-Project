@@ -1,1 +1,32 @@
-<html></html>
+<html>
+    <head>
+        <link rel = "stylesheet" href="{{url_for('static', filename='tracking.css')}}">
+        <link rel = "stylesheet" href="{{url_for('static', filename='navigation.css')}}">
+    </head>
+    <body>
+        <div class = "container">
+            <div class = "streaming-container">
+                <div style ="text-align: center;">
+                    <div class = "menu-container">
+                        <a href="{{url_for('index')}}" style="text-decoration: none;"><div>Go Back</div></a>
+                        <a href="{{url_for('panel')}}" style="text-decoration: none;"><div>View Gallery</div></a>
+                    </div>
+                </div>
+                
+                <div class = "stream video">
+                    <img src = "{{url_for('generate_frames')}}" alt ="just a holder" id="stream">
+                    <div style = "text-align: center;" id = "loadingText">
+                        <h1 style = "font-family: monospace; color: white;">
+                            Wait until the stream is finished loading!
+                        </h1>
+                    </div>
+                </div>
+            </div>   
+        </div>
+        <script>
+            document.getElementById("stream").addEventListener("load", ()=>{
+                document.getElementById("loadingText").style.display = "none";
+            });
+        </script>
+    </body>
+</html>

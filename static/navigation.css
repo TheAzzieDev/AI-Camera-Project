@@ -1,0 +1,49 @@
+.navbar
+{
+    text-align: center;  
+    position: sticky;
+    top: 5%;
+    left: 50%;
+    margin-bottom: 60px
+}
+
+.menu-container
+{
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: rgb(33, 148, 94);
+    padding: 20px;
+    width: 400px;
+    height: 80px;
+    gap: 10px;
+    border-radius: 10px;
+    margin: 20px;
+}
+.menu-container div
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-family: monospace;
+    background-color: rgb(0, 2, 2);
+    color: white;
+    font-size: 14px;
+    padding: 20px 10px;
+    width: 130px;
+    border: 2px solid rgb(0, 2, 2);
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+a{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.menu-container div:hover
+{
+    border: 2px solid white;
+}

@@ -1,11 +1,6 @@
 from flask import *
 from flask_cors import CORS
-import cv2
-import numpy as np
-from ultralytics import YOLO
-from datetime import datetime
 import os
-import uuid
 import glob
 import tracking
 app = Flask(__name__)

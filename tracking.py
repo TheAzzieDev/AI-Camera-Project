@@ -3,7 +3,7 @@ import cv2
 from datetime import datetime
 import os
 import uuid
-import requests
+
 
 def make_file(image):
 

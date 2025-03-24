@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{{url_for('static', filename='panel.css')}}">
+    </head>
+    <body>
+        <h1>Captures From Camera</h1>
+        <div class = "content">
+            <div class = "container">
+                {% for date in directories %}
+                    <h3>{{ date }}</h3>
+
+                    <div class = "grid-container">
+
+                    {% for file_path, file_name in file_info %} 
+                        <div>
+                            <img src = "{{url_for('static', filename = file_path)}}" alt = "{{file_name}}">
+                        </div>
+                    {% endfor %}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+      
+    </body>
+</html>
